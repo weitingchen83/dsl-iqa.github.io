@@ -12,7 +12,7 @@
         type="image/x-icon"
         href="./static/images/favicon.ico"/> -->
 
-  <title>RobustSAM: Segment Anything Robustly on Degraded Images
+  <title>DSL-FIQA: Assessing Facial Image Quality via Dual-Set Degradation Learning and Landmark-Guided Transformer
     </title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -225,12 +225,12 @@
         <img src="./robustsam_file/gif_output/lowlight_back_n_forth.gif"/>
         <img src="./robustsam_file/gif_output/rain_back_n_forth.gif"/> -->
         <div class="img-container">
-          <img class="custom-gif" src="./robustsam_file/gif_output/blur_back_n_forth.gif">
-          <img class="custom-gif" src="./robustsam_file/gif_output/haze_back_n_forth.gif">
+          <img class="custom-gif" src="./file/overview.pdf">
+<!--           <img class="custom-gif" src="./robustsam_file/gif_output/haze_back_n_forth.gif"> -->
         </div>
-        <div class="img-container">
+<!--         <div class="img-container">
           <img class="custom-gif" src="./robustsam_file/gif_output/lowlight_back_n_forth.gif">
-          <img class="custom-gif" src="./robustsam_file/gif_output/rain_back_n_forth.gif">
+          <img class="custom-gif" src="./robustsam_file/gif_output/rain_back_n_forth.gif"> -->
         </div>
 
 <!--       </div> -->
@@ -259,21 +259,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Segment Anything Model (SAM) has emerged as a transformative approach in image segmentation, 
-            acclaimed for its robust zero-shot segmentation capabilities and flexible prompting system. 
-            Nonetheless, its performance is challenged by images with degraded quality. Addressing this 
-            limitation, we propose the Robust Segment Anything Model (RobustSAM), which enhances SAM's 
-            performance on low-quality images while preserving its promptability and zero-shot generalization. 
+Generic Face Image Quality Assessment (GFIQA) evaluates the perceptual quality of facial images, which is crucial in improving image restoration algorithms and selecting high-quality face images for downstream tasks.
+We present a novel transformer-based method for GFIQA, which is aided by two unique mechanisms. 
+First, a novel Dual-Set Degradation Representation Learning (DSL) mechanism uses facial images with both synthetic and real degradations to decouple degradation from content, ensuring generalizability to real-world scenarios. This self-supervised method learns degradation features on a global scale, providing a robust alternative to conventional methods that use local patch information in degradation learning. 
+Second, our transformer leverages facial landmarks to emphasize visually salient parts of a face image in evaluating its perceptual quality.
           </p>
           <p>
-            Our method leverages the pre-trained SAM model with only marginal parameter increments and computational requirements. 
-            The additional parameters of RobustSAM can be optimized within 30 hours on eight GPUs, demonstrating 
-            its feasibility and practicality for typical research laboratories. We also introduce the Robust-Seg dataset, 
-            a collection of 688K image-mask pairs with different degradations designed to train and evaluate our model optimally. 
-            Extensive experiments across various segmentation tasks and datasets confirm RobustSAM's superior performance, 
-            especially under zero-shot conditions, underscoring its potential for extensive real-world application. Additionally, 
-            our method has been shown to effectively improve the performance of SAM-based downstream tasks such as single 
-            image dehazing and deblurring. 
+We also introduce a balanced and diverse Comprehensive Generic Face IQA (CGFIQA-40k) dataset of 40K images carefully designed to overcome the biases, in particular the imbalances in skin tone and gender representation, in existing datasets.
+Extensive analysis and evaluation demonstrate the robustness of our method, marking a significant improvement over prior methods.
           </p> 
 <!--           <p>
             We address this limitation by lifting
@@ -401,13 +394,13 @@
       </p>
       <div class="has-text-centered">
 <!--         <embed src="./robustsam_file/architecture.pdf" width="800px" height="2100px" /> -->
-        <img style="width: 100%;" src="./robustsam_file/architecture.jpg"
-             alt="RobustSAM architecture."/>
+        <img style="width: 100%;" src="./file/DCE_v7.pdf"
+             alt="DCE architecture."/>
       </div>
-      <h3 class="title is-4">Overview of the proposed AMFG and AOTG modules</h3>
+<!--       <h3 class="title is-4">Overview of the proposed AMFG and AOTG modules</h3>
 <!--       <embed src="./robustsam_file/style-suppresion.pdf" width="800px" height="2100px" /> -->
         <img style="width: 100%;" src="./robustsam_file/module.jpg"
-             alt="AMFG and AOTG modules."/>
+             alt="AMFG and AOTG modules."/> -->
       
 <!--       <p>
         HyperNeRF leverages main idea of level set methods by using a template NeRF which lives in
@@ -452,7 +445,7 @@
   <div class="container content is-max-desktop">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{chen2024robustsam,
-  author = {Chen, Wei-Ting and Vong, Yu-Jiet and Kuo, Sy-Yen and Ma, Sizhou and Wang, Jian},
+  author = {Chen, Wei-Ting and Krishnan, Gurunandan and Gao, Qiang and Kuo, Sy-Yen and Ma, Sizhou and Wang, Jian},
   title = {RobustSAM: Segment Anything Robustly on Degraded Images},
   journal = {CVPR},
   issue_date = {2024}
